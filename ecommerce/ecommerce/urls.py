@@ -18,10 +18,12 @@ from django.urls import path
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from . import signup
 
 
 
 urlpatterns = [
     path('', include ('products.urls', namespace='mainapp')),
     path('admin/', admin.site.urls),
+    path('signup/', signup.signup, name='signup')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
