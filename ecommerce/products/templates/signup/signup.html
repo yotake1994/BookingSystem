@@ -1,23 +1,26 @@
-{% block title %}Signup Page{% endblock title %}
- 
+{% extends 'base/base.html' %}
 {% block content %}
- <h1>Event Signup Page</h1>
-  
+<title>Signup</title>
+<body class>
+<div class="container">
+ <h1> Event Signup Page</h1>
 {% if submitted %}
     <p class="success">
         Signedup Successfully. Thank you.
     </p>
 
- {% else %}
+{% else %}
      <form action="" method="post" novalidate>
-     <table>
-         {{ form.as_table }}
-         <tr>
-             <td>&nbsp;</td>
-             <td><input type="submit" value="Submit"></td>
-         </tr>
-     </table>
+      <table class= "table-hover table-sm">
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+      </table>
      {% csrf_token %}
     </form>
+  </div>  
+</body>
 {% endif %}
 {% endblock content %}

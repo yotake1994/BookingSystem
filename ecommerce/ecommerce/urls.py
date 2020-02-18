@@ -24,6 +24,7 @@ from . import signup
 
 urlpatterns = [
     path('', include ('products.urls', namespace='mainapp')),
+    path('pages/', include('django.contrib.flatpages.urls')),
     path('admin/', admin.site.urls),
-    path('signup/', signup.signup, name='signup')
+    path('signup/', signup.signup, name='signup'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
